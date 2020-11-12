@@ -17,7 +17,7 @@ onmessage = function (event) {
     }
 };
 
-fetch("polkadot-2251297.json")
+fetch("westend.json")
     .then((chain_specs) => chain_specs.text())
     .then((chain_specs) => substrate_lite.start(chain_specs, (response) => postMessage(response)))
     .then((c) => {
