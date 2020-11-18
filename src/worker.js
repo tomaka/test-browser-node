@@ -19,7 +19,10 @@ onmessage = function (event) {
 
 fetch("westend.json")
     .then((chain_specs) => chain_specs.text())
-    .then((chain_specs) => substrate_lite.start(chain_specs, (response) => postMessage(response)))
+    .then((chain_specs) => substrate_lite.start({
+        chain_spec: chain_specs,
+        json_rpc_callback: (response) => postMessage(response)
+    }))
     .then((c) => {
         client = c;
         unsent_rpcs.forEach((rpc) => client.send_json_rpc(rpc));

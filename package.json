@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "substrate-lite": "^0.1.2"
+    "substrate-lite": "^0.2.0"
   },
   "devDependencies": {
     "webpack": "^5.4.0",
