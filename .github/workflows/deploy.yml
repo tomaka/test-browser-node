@@ -3,7 +3,7 @@ on:
   push:
     branches: [master]
 jobs:
-  build-and-test:
+  deploy-to-ipfs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
