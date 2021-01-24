@@ -3,9 +3,38 @@
   <head>
     <meta charset="utf-8"/>
     <title>smoldot demo</title>
+    <style type="text/css">
+      html {
+        margin: 0;
+        box-sizing: border-box;
+        height: 100%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+
+      body {
+        background-color: black;
+        margin: 0;
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+      }
+
+      div {
+        font-size: 3em;
+        height: 100px;
+        line-height: 100px;
+        margin: auto auto;
+      }
+    </style>
   </head>
   <body>
-    Best block height: <span id="blockHeight"></span>
+    <div>
+      #<span id="blockHeight"></span>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
