@@ -17,6 +17,12 @@ jobs:
           restore-keys: ${{ runner.os }}-node-
       - run: yarn install
       - run: yarn build
+      - uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.3
         id: ipfs-upload
         with:
