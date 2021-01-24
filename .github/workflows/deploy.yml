@@ -24,4 +24,5 @@ jobs:
           service: pinata
           pinataKey: ${{ secrets.PINATA_KEY }}
           pinataSecret: ${{ secrets.PINATA_SECRET }}
-      - run: echo "Uploaded hash: ${{ steps.ipfs-upload.outputs.hash }}"
+      - run: |
+        echo "Uploaded hash: ${{ steps.ipfs-upload.outputs.hash }}"
