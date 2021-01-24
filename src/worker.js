@@ -1,4 +1,4 @@
-import * as substrate_lite from 'substrate-lite';
+import * as smoldot from 'smoldot';
 
 // `null` on startup. Will store the client, once it has finished initializing.
 let client = null;
@@ -19,7 +19,7 @@ onmessage = function (event) {
 
 fetch("westend.json")
     .then((chain_specs) => chain_specs.text())
-    .then((chain_specs) => substrate_lite.start({
+    .then((chain_specs) => smoldot.start({
         chain_spec: chain_specs,
         json_rpc_callback: (response) => postMessage(response)
     }))
