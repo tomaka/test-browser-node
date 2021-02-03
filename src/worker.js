@@ -21,6 +21,7 @@ fetch("westend.json")
     .then((chain_specs) => chain_specs.text())
     .then((chain_specs) => smoldot.start({
         chain_spec: chain_specs,
+        max_log_level: 3,
         json_rpc_callback: (response) => postMessage(response)
     }))
     .then((c) => {
