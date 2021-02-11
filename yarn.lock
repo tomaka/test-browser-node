@@ -2680,10 +2680,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-smoldot@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/smoldot/-/smoldot-0.1.10.tgz#560cfe267b37adf7378ddb4a8802ad2945d88ce3"
-  integrity sha512-+Fi2+EOh2r0mCS5WvtCL0rh4p06uS38rXZyLv4AEIXTEDZ78Zsggs21TU6GMfSNiVVJuiY71ZTBQFHWh17V+Nw==
+smoldot@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/smoldot/-/smoldot-0.1.12.tgz#ff73d718cb3cd6d194232050547d4f54fdfe5389"
+  integrity sha512-cUpe8V7SRUtaQvpEi82/QpvdNb6KdcE7hvTcSJ7ZE8TvTOugutEeu+a5XBbS6rXMqXjbxgTDzEGEebCdegwo2g==
   dependencies:
     buffer "^6.0.1"
     performance-now "^2.1.0"

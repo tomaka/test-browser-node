@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "smoldot": "^0.1.10"
+    "smoldot": "^0.1.12"
   },
   "devDependencies": {
     "webpack": "^5.4.0",
