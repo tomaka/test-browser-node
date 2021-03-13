@@ -15,7 +15,7 @@
     "smoldot": "../smoldot/bin/wasm-node/javascript"
   },
   "devDependencies": {
-    "parcel": "^2.0.0-nightly.625",
+    "parcel": "^2.0.0-beta.1",
     "rimraf": "^3.0.2"
   }
 }
