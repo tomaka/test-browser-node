@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve",
-    "build": "webpack"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +14,8 @@
   "dependencies": {
     "smoldot": "../smoldot/bin/wasm-node/javascript"
   },
+  "browserslist": ["defaults", "ie 9", "ie 10"],
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
-    "@babel/plugin-syntax-import-meta": "^7.10.4",
     "parcel-bundler": "^1.12.4"
   },
   "resolutions": {
