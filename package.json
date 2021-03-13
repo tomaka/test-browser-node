@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "smoldot": "../smoldot/bin/wasm-node/javascript"
+    "smoldot": "^0.1.13"
   },
   "devDependencies": {
     "parcel": "^2.0.0-beta.1",
