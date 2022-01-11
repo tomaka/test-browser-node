@@ -5,17 +5,18 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/index.html",
-    "build": "rimraf ./dist && parcel build src/index.html"
+    "start": "webpack src/index.html",
+    "build": "rimraf ./dist && mkdir -p ./dist && cp ./assets/* ./dist && webpack build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "smoldot": "^0.1.13"
+    "@substrate/smoldot-light": "^0.5.13"
   },
   "devDependencies": {
-    "parcel": "^2.0.0-beta.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   }
 }

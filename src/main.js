@@ -1,10 +1,13 @@
-import * as smoldot from 'smoldot';
+import * as smoldot from '@substrate/smoldot-light';
 import chain_spec from './westend.json';
 
-smoldot.start({
-    chain_spec: JSON.stringify(chain_spec),
-    max_log_level: 3,
-    json_rpc_callback: (response) => {
+const client = smoldot.start({
+    maxLogLevel: 3
+});
+
+client.addChain({
+    chainSpec: JSON.stringify(chain_spec),
+    jsonRpcCallback: (response) => {
         let data = JSON.parse(response);
         if (!!data.params) {
             let block_height = parseInt(data.params.result.number);
@@ -12,6 +15,6 @@ smoldot.start({
         }
     }
 })
-    .then((client) => {
-        client.send_json_rpc('{"jsonrpc":"2.0","id":2,"method":"chain_subscribeNewHeads","params":[]}');
+    .then((chain) => {
+        chain.sendJsonRpc('{"jsonrpc":"2.0","id":2,"method":"chain_subscribeNewHeads","params":[]}');
     });
