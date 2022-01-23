@@ -2,7 +2,8 @@ import * as smoldot from '@substrate/smoldot-light';
 import chain_spec from './westend.json';
 
 const client = smoldot.start({
-    maxLogLevel: 3
+    maxLogLevel: 3,
+    forbidNonLocalWs: true,
 });
 
 client.addChain({
