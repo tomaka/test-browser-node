@@ -20,9 +20,10 @@ document.getElementById("start").addEventListener("click", () => {
             enableExperimentalWebRTC: true
         });
 
-        chainSpec.bootNodes = [
-            document.getElementById("bootnode").value
-        ];
+        if (document.getElementById("bootnode").value)
+            chainSpec.bootNodes = [
+                document.getElementById("bootnode").value
+            ];
     
         client.addChain({
             chainSpec: JSON.stringify(chainSpec),
