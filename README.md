@@ -7,7 +7,7 @@ Automatically deployed here: https://tomaka.github.io/test-browser-node/index.ht
 # Usage
 
 ```
-npm install
-npm run build
+yarn install
+yarn run build
 cd dist && python -m http.server
 ```

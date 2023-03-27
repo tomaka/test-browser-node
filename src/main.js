@@ -1,5 +1,5 @@
 import * as smoldot from '@substrate/smoldot-light';
-import chainSpec from './substrate-node-template.json';
+import chainSpec from './westend.json';
 
 let client;
 
@@ -16,7 +16,7 @@ document.getElementById("start").addEventListener("click", () => {
                 console.log(msg);
             },
             maxLogLevel: 4,
-            forbidNonLocalWs: true,
+            //forbidNonLocalWs: true,
             enableExperimentalWebRTC: true
         });
 
