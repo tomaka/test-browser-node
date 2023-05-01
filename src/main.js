@@ -20,6 +20,13 @@ document.getElementById("start").addEventListener("click", () => {
             enableExperimentalWebRTC: true
         });
 
+        if (crossOriginIsolated) {
+            const worker = new Worker(new URL('./worker.js', import.meta.url));
+            client.createBackgroundRunnable().then((obj) => worker.postMessage(obj));
+        } else {
+            document.getElementById('logs').innerText += "crossOriginIsolated is false" + "\n";
+        }
+
         if (document.getElementById("bootnode").value)
             chainSpec.bootNodes = [
                 document.getElementById("bootnode").value
