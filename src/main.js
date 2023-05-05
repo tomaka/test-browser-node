@@ -1,4 +1,4 @@
-import * as smoldot from '@substrate/smoldot-light';
+import * as smoldot from '@substrate/smoldot-light/no-auto-bytecode';
 import chainSpec from './westend.json';
 
 let client;
@@ -10,20 +10,29 @@ document.getElementById("start").addEventListener("click", () => {
     promise.then(() => {
         document.getElementById('logs').innerText = '';
 
-        client = smoldot.start({
+        const worker = new Worker(new URL('./worker.js', import.meta.url));
+
+        worker.onerror = (err) => console.error(err);
+
+        const bytecode = new Promise((resolve) => {
+            worker.onmessage = (event) => resolve(event.data);
+        });
+
+        const { port1, port2 } = new MessageChannel();
+        worker.postMessage(port1, [port1]);
+
+        client = smoldot.startWithBytecode({
+            bytecode,
             logCallback: (level, target, msg)  => {
                 document.getElementById('logs').innerText += "[" + target + "] " + msg + "\n";
                 console.log(msg);
             },
             maxLogLevel: 4,
+            portToWorker: port2,
             //forbidNonLocalWs: true,
-            enableExperimentalWebRTC: true
         });
 
-        if (crossOriginIsolated) {
-            const worker = new Worker(new URL('./worker.js', import.meta.url));
-            client.createBackgroundRunnable().then((obj) => worker.postMessage(obj));
-        } else {
+        if (!crossOriginIsolated) {
             document.getElementById('logs').innerText += "crossOriginIsolated is false" + "\n";
         }
 
