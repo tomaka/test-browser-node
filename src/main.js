@@ -1,4 +1,4 @@
-import * as smoldot from '@substrate/smoldot-light/no-auto-bytecode';
+import * as smoldot from 'smoldot/no-auto-bytecode';
 import chainSpec from './westend.json';
 
 let client;

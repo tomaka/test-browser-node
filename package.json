@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@substrate/smoldot-light": "../smoldot/wasm-node/javascript"
+    "smoldot": "../smoldot/wasm-node/javascript"
   },
   "devDependencies": {
     "express": "4.18.2",
