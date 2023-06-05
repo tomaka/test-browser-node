@@ -3,20 +3,19 @@ import chainSpec from './westend.json';
 
 let client;
 
+const worker = new Worker(new URL('./worker.js', import.meta.url));
+worker.onerror = (err) => console.error(err);
+
+const bytecode = new Promise((resolve) => {
+    worker.onmessage = (event) => resolve(event.data);
+});
+
 document.getElementById("start").addEventListener("click", () => {
     let promise = Promise.resolve();
     if (client) promise = client.terminate();
 
     promise.then(() => {
         document.getElementById('logs').innerText = '';
-
-        const worker = new Worker(new URL('./worker.js', import.meta.url));
-
-        worker.onerror = (err) => console.error(err);
-
-        const bytecode = new Promise((resolve) => {
-            worker.onmessage = (event) => resolve(event.data);
-        });
 
         const { port1, port2 } = new MessageChannel();
         worker.postMessage(port1, [port1]);
