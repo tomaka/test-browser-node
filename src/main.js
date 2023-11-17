@@ -26,7 +26,7 @@ document.getElementById("start").addEventListener("click", () => {
                 document.getElementById('logs').innerText += "[" + target + "] " + msg + "\n";
                 console.log(msg);
             },
-            maxLogLevel: 4,
+            maxLogLevel: 5,
             portToWorker: port2,
             //forbidNonLocalWs: true,
         });
