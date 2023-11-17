@@ -6,8 +6,15 @@ Automatically deployed here: https://tomaka.github.io/test-browser-node/index.ht
 
 # Usage
 
+Build:
+
 ```
-yarn install
-yarn run build
-cd dist && python -m http.server
+npm install
+npm run build
+```
+
+Run a background server running the build:
+
+```
+npm run server
 ```
