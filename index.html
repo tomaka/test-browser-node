@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>smoldot demo</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <style type="text/css">
+      html {
+        margin: 0;
+        box-sizing: border-box;
+        height: 100%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Westend</h2>
+    <p>Put a bootnode address in the field below (format: `/&lt;addr&gt;/p2p/&lt;peerid&gt;`),
+      and smoldot will replace all the bootnodes with this single one. If the field below remains
+      empty, smoldot uses the default bootnodes.</p>
+    <input type="text" id="bootnode" size="200" placeholder="Bootnode multiaddr" /><br />
+    <button type="button" id="start">Start client</button>
+    <button type="button" id="stop">Stop client</button>
+    <div id="logs" style="font-family: monospace; white-space: pre-wrap"></div>
+    <script src="./main.js"></script>
+  </body>
+</html>
